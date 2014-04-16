@@ -1,0 +1,11 @@
+{{#form-for controller}}
+  {{input username}}
+  {{input email}}
+  {{input password}}
+  {{input passwordConfirmation}}
+  {{#if isValid}}
+    <button {{action 'save' this}}>Sign Up</button>
+  {{else}}
+    <button disabled>Complete the form above</button>
+  {{/if}}
+{{/form-for}}
