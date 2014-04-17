@@ -10,9 +10,10 @@ export default Ember.Route.extend({
       var login = model.getProperties('username', 'password');
       var data = {user: user};
       $.post('/api/v1/users', data).then(function(response){
-        _this.get('controllers.login').send('authenticate', login);
+        Ember.run(function(){
+          _this.get('controllers.login').send('authenticate', login);
+        });
       }, function(error){
-      
       });
     }
   }
