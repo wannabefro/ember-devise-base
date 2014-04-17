@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
   before_filter :update_sanitized_params, if: :devise_controller?
   private
 
