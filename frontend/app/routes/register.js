@@ -15,6 +15,13 @@ export default Ember.Route.extend({
         _this.transitionTo('index');
         _this.controllerFor('application').set('success', "Welcome to App!");
       }, function(error){
+        var errors = JSON.parse(error.responseText).errors;
+        var controller = _this.controller;
+        for(var attr in errors) {
+          if (controller.get('content').hasOwnProperty(attr)) {
+            controller.set('errors.'+attr, errors[attr]);
+          }
+        }
       });
     }
   }

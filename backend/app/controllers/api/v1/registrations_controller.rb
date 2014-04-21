@@ -17,7 +17,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
       sign_in resource
     else
       clean_up_passwords resource
-      return render :status => 401, :json => {:errors => resource.errors}
+      return render json: {errors: resource.errors}, :status => 422
     end
   end
 

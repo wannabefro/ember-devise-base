@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   acts_as_token_authenticatable
+  validates :username, presence: true, uniqueness: {case_sensitive: false}, length: {minimum: 4}
 end
