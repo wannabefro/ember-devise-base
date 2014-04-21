@@ -63,7 +63,8 @@ module.exports = function (broccoli) {
     'ember-shim.js',
     'ember-easyForm/index.js',
     'ember-validations/index.js',
-    'ember-simple-auth.js'
+    'ember-simple-auth.js',
+    'foundation/index.js'
   ];
 
   var applicationJs = preprocessJs(appAndDependencies, '/', prefix);
