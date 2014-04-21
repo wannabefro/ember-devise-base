@@ -17,7 +17,7 @@ var preprocessJs = p.preprocessJs;
 
 module.exports = function (broccoli) {
 
-  var prefix = 'chores';
+  var prefix = 'app';
   var rootURL = '/';
 
   // index.html
