@@ -64,6 +64,7 @@ module.exports = function (broccoli) {
     'ember-easyForm/index.js',
     'ember-validations/index.js',
     'ember-simple-auth.js',
+    'ember-simple-auth-devise.js',
     'foundation/index.js'
   ];
 

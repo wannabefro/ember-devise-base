@@ -8,14 +8,16 @@
 
   <section class="top-bar-section">
     <ul class="right">
-      {{#unless session.isAuthenticated}}
+      {{#if session.isAuthenticated}}
+        <li {{action 'invalidateSession'}}><a href='#'>Sign Out</a></li>
+      {{else}}
         {{#link-to 'login' tagName='li' href=false}}
           {{link-to 'Login' 'login'}}
         {{/link-to}}
         {{#link-to 'register' tagName='li' href=false}}
           {{link-to 'Register' 'register'}}
         {{/link-to}}
-      {{/unless}}
+      {{/if}}
     </ul>
 
     <ul class="left">

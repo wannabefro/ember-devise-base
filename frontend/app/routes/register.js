@@ -10,9 +10,10 @@ export default Ember.Route.extend({
       var login = model.getProperties('username', 'password');
       var data = {user: user};
       $.post('/api/v1/users', data).then(function(response){
-        Ember.run(function(){
-          _this.get('controllers.login').send('authenticate', login);
-        });
+         _this.container.lookup('session-store:local-storage').persist({auth_email: response.email, auth_token: response.auth_token, authenticatorFactory: 'authenticator:devise'});
+        _this.set('session.isAuthenticated', true);
+        _this.transitionTo('index');
+        _this.controllerFor('application').set('success', "Welcome to App!");
       }, function(error){
       });
     }

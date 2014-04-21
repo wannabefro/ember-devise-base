@@ -13,7 +13,7 @@ export default Ember.ObjectController.extend(Ember.Validations.Mixin, {
   validations: {
     username: {
       presence: true,
-      length: { minimum: 5}
+      length: { minimum: 4}
     },
     email: {
       presence: true,
